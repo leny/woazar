@@ -29,6 +29,7 @@ Load `package.json` and *woazar* modules.
         hash: require "./modules/hash.js"
         uuid: require "./modules/uuid.js"
         timestamp: require "./modules/timestamp.js"
+        replace: require "./modules/replace.js"
 
 Define program commands (using commander's API).
 
@@ -38,6 +39,7 @@ Define program commands (using commander's API).
         .option( modules.hash.options, modules.hash.description )
         .option( modules.uuid.options, modules.uuid.description )
         .option( modules.timestamp.options, modules.timestamp.description )
+        .option( modules.replace.options, modules.replace.description )
 
     woazar.parse process.argv
 
@@ -53,6 +55,8 @@ Redirect the arguments to specified modules.
 
         if !!woazar.hash
             result = modules.hash.exec woazar.hash, sentence
+        else if !!woazar.replace
+            result = modules.replace.exec sentence
 
     console.log result
 
