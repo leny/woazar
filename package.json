@@ -1,8 +1,10 @@
 {
   "name": "woazar",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Generate UUID/serials/hashes easily from the command line.",
-  "keywords": [],
+  "keywords": [
+    "uuid", "cli", "clipboard", "hashes", "timestamp", "utility"
+  ],
   "homepage": "https://github.com/Leny/woazar",
   "author": {
     "name": "Leny",
