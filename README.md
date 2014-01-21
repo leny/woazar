@@ -18,12 +18,19 @@ woazar.js [options] <sentence>
 ### Options:
 
 > -h, --help              output usage information
+
 > -V, --version           output the version number
+
 > -h, --hash <algorythm>  Return hashed <sentence> with selected <algorythm>.
+
 >                         Supported algorythm are: 'md5', 'sha1', 'sha256', 'sha512' and 'whirlpool'.
+
 > -u, --uuid              Return an UUID following the RFC 4122.
+
 > -t, --timestamp         Return a the current timestamp.
+
 > -r, --replace           Return a the current sentence, where the 'x' are replaced by random number, and the 'y'.
+
 > -c, --copy              Copy the result to the clipboard.
 
 ## Contributing
