@@ -27,6 +27,7 @@ Load `package.json` and *woazar* modules.
 
     modules =
         hash: require "./modules/hash.js"
+        uuid: require "./modules/uuid.js"
 
 Define program commands (using commander's API).
 
@@ -34,17 +35,21 @@ Define program commands (using commander's API).
         .version( pkg.version )
         .usage( "[options] <sentence>" )
         .option( modules.hash.options, modules.hash.description )
+        .option( modules.uuid.options, modules.uuid.description )
 
     woazar.parse process.argv
 
 Redirect the arguments to specified modules.
 
-    sentence = woazar.args.join( " " ).trim()
+    if !!woazar.uuid
+        result = modules.uuid.exec()
+    else
+        if not ( sentence = woazar.args.join( " " ).trim() )
+            console.log chalk.bold.red( "ERROR: " ), "no sentence given !!!"
 
-    if not sentence
-        console.log chalk.bold.red( "ERROR: " ), "no sentence given !!!"
+        if !!woazar.hash
+            result = modules.hash.exec woazar.hash, sentence
 
-    if !!woazar.hash
-        result = modules.hash.exec woazar.hash, sentence
+    console.log result
 
 > TODO : follow the specs : http://files.flatland.be/fFHu
