@@ -38,8 +38,8 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
-**2014/01/04:** project starting
-**2014/01/21:** v0.1.0
+* **2014/01/04:** project starting
+* **2014/01/21:** v0.1.0
 
 ## TODO
 
