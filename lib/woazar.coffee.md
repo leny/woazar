@@ -44,4 +44,7 @@ Redirect the arguments to specified modules.
     if not sentence
         console.log chalk.bold.red( "ERROR: " ), "no sentence given !!!"
 
+    if !!woazar.hash
+        result = modules.hash.exec woazar.hash, sentence
+
 > TODO : follow the specs : http://files.flatland.be/fFHu
