@@ -28,6 +28,7 @@ Load `package.json` and *woazar* modules.
     modules =
         hash: require "./modules/hash.js"
         uuid: require "./modules/uuid.js"
+        timestamp: require "./modules/timestamp.js"
 
 Define program commands (using commander's API).
 
@@ -36,6 +37,7 @@ Define program commands (using commander's API).
         .usage( "[options] <sentence>" )
         .option( modules.hash.options, modules.hash.description )
         .option( modules.uuid.options, modules.uuid.description )
+        .option( modules.timestamp.options, modules.timestamp.description )
 
     woazar.parse process.argv
 
@@ -43,6 +45,8 @@ Redirect the arguments to specified modules.
 
     if !!woazar.uuid
         result = modules.uuid.exec()
+    else if !!woazar.timestamp
+        result = modules.timestamp.exec woazar.args.join( " " ).trim()
     else
         if not ( sentence = woazar.args.join( " " ).trim() )
             console.log chalk.bold.red( "ERROR: " ), "no sentence given !!!"
