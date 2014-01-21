@@ -20,6 +20,7 @@ We use the [commander](https://npmjs.org/package/commander) & [chalk](https://np
 
     woazar = require "commander"
     chalk = require "chalk"
+    cliparoo = require "cliparoo"
 
 Load `package.json` and *woazar* modules.
 
@@ -40,6 +41,7 @@ Define program commands (using commander's API).
         .option( modules.uuid.options, modules.uuid.description )
         .option( modules.timestamp.options, modules.timestamp.description )
         .option( modules.replace.options, modules.replace.description )
+        .option( "-c, --copy", "Copy the result to the clipboard." )
 
     woazar.parse process.argv
 
@@ -57,6 +59,10 @@ Redirect the arguments to specified modules.
             result = modules.hash.exec woazar.hash, sentence
         else if !!woazar.replace
             result = modules.replace.exec sentence
+
+    if !!woazar.copy
+        cliparoo result
+        result += chalk.italic.green " (copied to the clipboard)"
 
     console.log result
 
