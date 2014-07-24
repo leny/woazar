@@ -34,16 +34,16 @@
     "test": "grunt nodeunit"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.6",
-    "grunt-contrib-nodeunit": "~0.2",
-    "grunt-contrib-watch": "~0.5",
+    "grunt-contrib-jshint": "~0.10",
+    "grunt-contrib-nodeunit": "~0.4",
+    "grunt-contrib-watch": "~0.6",
     "grunt": "~0.4",
-    "grunt-contrib-coffee": "~0.8",
+    "grunt-contrib-coffee": "~0.10",
     "grunt-banner": "~0.2"
   },
   "dependencies": {
-    "chalk": "~0.4",
-    "commander": "~2.1",
+    "chalk": "~0.5",
+    "commander": "~2.3",
     "cliparoo": "~1.0"
   }
 }
