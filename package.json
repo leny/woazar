@@ -1,6 +1,6 @@
 {
   "name": "woazar",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Generate UUID/serials/hashes easily from the command line.",
   "keywords": [
     "uuid",
