@@ -1,5 +1,7 @@
 # woazar
 
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 > Generate UUID/serials/hashes easily from the command line.
 
 * * *
